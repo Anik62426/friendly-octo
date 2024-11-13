@@ -29,7 +29,7 @@ const NavbarComponent = () => {
     setShowSidebar((prev)=>!prev)
   }
  
-   console.log(showSidebar)
+  
   return (
     <div>
       {showSidebar ? <motion.div

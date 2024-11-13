@@ -30,6 +30,7 @@ const Navigation = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   
 
+
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
@@ -174,7 +175,6 @@ const Navigation = () => {
                 <li>
                   <Link
                     to="/admin/dashboard"
-                          target="_blank"
                     className="block px-4 py-2 hover:bg-gray-200 rounded-2xl text-lg font-semibold"
                   >
                     Dashboard

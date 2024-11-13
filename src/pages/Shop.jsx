@@ -98,6 +98,21 @@ const Shop = () => {
     }
   }, [isInView]);
 
+  
+  const colors = [
+    "bg-gradient-to-b from-slate-50 to-blue-300",
+    "bg-gradient-to-b from-slate-50 to-emerald-300",
+    "bg-gradient-to-b from-slate-50 to-lime-200",
+    "bg-gradient-to-b from-slate-50 to-purple-300",
+    "bg-gradient-to-b from-slate-50 to-sky-300",
+    "bg-gradient-to-b from-slate-50 to-yellow-300",
+    "bg-gradient-to-b from-slate-50 to-red-400",
+    "bg-gradient-to-b from-slate-50 to-orange-300"
+  ];
+ 
+  // const [currentColors, setCurrentColor] = useState(colors[0]);
+  
+
   return (
     <>
       <div className=" mx-auto">
@@ -106,10 +121,10 @@ const Shop = () => {
               {products.length === 0 ? (
                 <Loader />
               ) : (
-                products?.map((p) => (
+                products?.map((p,index) => (
                   <motion.div 
                    className="m-4" key={p._id}>
-                    <ProductCard p={p} />
+                    <ProductCard p={p} currentColor={colors[index % colors.length]} />
                   </motion.div>
                 ))
               )}

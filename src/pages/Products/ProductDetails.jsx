@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
@@ -21,7 +21,7 @@ import Ratings from "./Ratings";
 import ProductTabs from "./ProductTabs";
 import { addToCart } from "../../redux/features/cart/cartSlice";
 
-const ProductDetails = () => {
+const ProductDetails = ({currentColor}) => {
   const { id: productId } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -37,7 +37,6 @@ const ProductDetails = () => {
     error,
   } = useGetProductDetailsQuery(productId);
 
-    
 
   const { userInfo } = useSelector((state) => state.auth);
 
@@ -70,8 +69,24 @@ const ProductDetails = () => {
       ? product.reviews.reduce((acc, review) => acc + review.rating, 0) /
         product.reviews.length
       : 0;
-
+      
+      const colors = [
+        "bg-gradient-to-b from-slate-50 via-blue-100 to-blue-300",
+        "bg-gradient-to-b from-slate-50 via-emerald-100 to-emerald-300",
+        "bg-gradient-to-b from-slate-50 via-lime-100 to-lime-200",
+        "bg-gradient-to-b from-slate-50 via-purple-100 to-purple-300",
+        "bg-gradient-to-b from-slate-50 via-sky-100 to-sky-300",
+        "bg-gradient-to-b from-slate-50 via-yellow-100 to-yellow-300",
+        "bg-gradient-to-b from-slate-50 via-slate-100 to-red-400",
+        "bg-gradient-to-b from-slate-50 via-slate-100 to-orange-300"
+      ];
+ const [currentIndex, setCurrentIndex] = useState(0);
+      useEffect(() => {
+        const randomNumber = Math.floor(Math.random() * 7) + 1;
+    setCurrentIndex((prevIndex) => (prevIndex + randomNumber) % colors.length);
+ }, [product])
  
+
 
   return (
     <>
@@ -94,27 +109,27 @@ const ProductDetails = () => {
         <>
           <div className="flex flex-wrap relative">
            <div className="grid grid-cols-2 " >
-             <div className="bg-pink-100 w-[500px] ml-14  rounded-2xl flex justify-center mt-20">
+             <div className={`${colors[currentIndex]} w-[500px] ml-14  rounded-2xl flex justify-center mt-20`}>
               <img
                 src={product.image}
                 alt={product.name}
+                loading="lazy"
                 className="w-[20rem] mt-5 rounded-lg object-cover"
               />
           
-              <HeartIcon product={product} />
+              <HeartIcon  product={product} />
             </div>
 
             <div className=" ml-10 mt-20">
            
            <div className="flex">
 
-            <div className="flex ml-4 mt-7">
+           <div className="flex ml-4 mt-7">
           <div className="relative flex">
           {Array.from({ length: 5 }, (v, i) => <FaStar strokeWidth={2} size={20} color="#D1D5DB"/>)}  
           </div>
           <div className="absolute flex">
-         
-          {Array.from({ length: Math.round(averageRating)}, (v, i) => <FaStar   size={20} color="#FF719D"/>)}
+          {Array.from({ length: product.rating}, (v, i) => <FaStar   size={20} color="#FF719D"/>)}
           </div>
           </div>
 

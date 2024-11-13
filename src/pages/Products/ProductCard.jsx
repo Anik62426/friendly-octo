@@ -14,9 +14,10 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
+import ProductDetails from "./ProductDetails";
 
 
-const ProductCard = ({ p }) => {
+const ProductCard = ({p,currentColor} ) => {
   const dispatch = useDispatch();
 
 
@@ -39,29 +40,8 @@ const ProductCard = ({ p }) => {
   }, [isInView]);
 
  
-  const colors = [
-    "bg-gradient-to-b from-slate-50 to-orange-400",
-    "bg-gradient-to-b from-slate-50 to-blue-500",
-    "bg-gradient-to-b from-slate-50 to-green-300",
-    "bg-gradient-to-b from-slate-50 to-pink-600",
-    "bg-gradient-to-b from-slate-50 to-brown-500",
-    "bg-gradient-to-b from-slate-50 to-yellow-400",
-    "bg-gradient-to-b from-slate-50 to-red-500"
-  ];
- 
-  const [currentColor, setCurrentColor] = useState(colors[0]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentColor((prevColor) => {
-        const currentIndex = colors.indexOf(prevColor);
-        const nextIndex = (currentIndex + 1) % colors.length;
-        return colors[nextIndex];
-      });
-    }, 2000); 
 
-    return () => clearInterval(interval); 
-  }, [colors]);
  
 
 
@@ -78,6 +58,8 @@ const ProductCard = ({ p }) => {
                     },
                   }}
                   transition={{ duration:1, ease: "easeInOut", delay: 0.1}}>
+                   
+                    
       <motion.div className="relative flex  ">
         <Link to={`/product/${p._id}`}>
          <div className="flex ">
