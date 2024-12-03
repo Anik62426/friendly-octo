@@ -77,7 +77,7 @@ const ProductCard = ({ p, currentColor }) => {
             </p>
           </div>
           <img
-            className=" mt-1 cursor-pointer rounded-2xl w-60 mx-auto hover:transform hover:-translate-y-3 hover:scale-105 hover:origin-top-right"
+            className=" mt-2 cursor-pointer rounded-2xl w-60 mx-auto hover:transform  hover:scale-105 hover:duration-100 "
             src={p.image}
             alt={p.name}
             style={{ objectFit: "cover" }}
