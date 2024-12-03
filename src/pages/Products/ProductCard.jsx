@@ -52,7 +52,7 @@ const ProductCard = ({ p, currentColor }) => {
       }}
       transition={{ duration: 1, ease: "easeInOut", delay: 0.1 }}
     >
-      <motion.div className="relative flex  ">
+      <motion.div>
         <Link to={`/product/${p._id}`}>
           <div className="flex ">
             <div className="flex ml-4 mt-7">
@@ -77,7 +77,7 @@ const ProductCard = ({ p, currentColor }) => {
             </p>
           </div>
           <img
-            className="cursor-pointer rounded-2xl w-60 mx-auto hover:transform hover:-translate-y-3 hover:scale-105 hover:origin-top-right"
+            className=" mt-1 cursor-pointer rounded-2xl w-60 mx-auto hover:transform hover:-translate-y-3 hover:scale-105 hover:origin-top-right"
             src={p.image}
             alt={p.name}
             style={{ objectFit: "cover" }}
