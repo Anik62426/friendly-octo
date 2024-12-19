@@ -76,19 +76,29 @@ const ProductCard = ({ p, currentColor }) => {
               RS.{p.price}
             </p>
           </div>
-          <img
-            className=" mt-2 cursor-pointer rounded-2xl w-60 mx-auto hover:transform  hover:scale-105 hover:duration-100 "
-            src={p.image}
-            alt={p.name}
-            style={{ objectFit: "cover" }}
-          />
 
-          <div className="flex items-center ml-6 mt-4">
-            <h5 className="mb-2 text-2xl font-bold text-black w-44">
+          <div className="relative flex justify-center w-full group">
+            <img
+              className="mt-4 absolute z-10 cursor-pointer rounded-2xl w-56 mb-auto hover:transform hover:scale-105 hover:duration-100"
+              src={p.image}
+              alt={p.name}
+              style={{ objectFit: "cover" }}
+            />
+            <img
+              className="relative mt-2 mix-blend-multiply w-72 transform scale-0 group-hover:scale-105 transition-transform duration-300"
+              // src="https://res.cloudinary.com/dpvt2kpli/image/upload/v1733248733/fo0cz1mbn7dnag7svwj7.webp"
+              src="https://res.cloudinary.com/dpvt2kpli/image/upload/v1734347485/hllmklevtu1enbeerhu4.jpg"
+              alt={p.name}
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+
+          <div className="flex items-center justify-around ml-6 mt-4 ">
+            <h5 className="mb-2 text-2xl font-bold text-black w-44 ">
               {p?.name?.substring(0, 25)}{" "}
             </h5>
             <button
-              className="py-2.5 px-5 ml-2  bg-white rounded-full uppercase font-mono font-bold hover:bg-black hover:text-white border-2 border-black"
+              className="py-2.5 px-5 ml-2 mr-4  bg-white rounded-full uppercase font-mono font-bold hover:bg-black hover:text-white border-2 hover:py-3.5  border-black"
               onClick={() => addToCartHandler(p, 1)}
             >
               Add to Cart

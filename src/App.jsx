@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./pages/Auth/Navbar";
 import Footer from "./components/Footer";
+import Testimonial from "./components/Testimonial";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       
       <main className="pb-3">
         <Outlet />
+        <Testimonial/>
       </main>
       <Footer/>
     </>

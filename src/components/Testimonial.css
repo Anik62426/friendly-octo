@@ -1,0 +1,28 @@
+.testimonial-container {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .testimonial-items {
+    display: flex;
+    animation: scrollTestimonials 20s linear infinite;
+  }
+  
+  .testimonial-item {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 400px; /* Adjust as needed */
+    margin-right: 2rem; /* Space between items */
+  }
+  
+  @keyframes scrollTestimonials {
+    from {
+      transform: translateX(0);
+    }
+   to {
+      transform: translateX(-90%);
+    }
+  }
+  

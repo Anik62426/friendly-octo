@@ -71,7 +71,7 @@ const ProductDetails = ({currentColor}) => {
       : 0;
       
       const colors = [
-        "bg-gradient-to-b from-slate-50 via-blue-100 to-blue-300",
+        "bg-gradient-to-b from-slate-50 via-lime-100 to-lime-300",
         "bg-gradient-to-b from-slate-50 via-emerald-100 to-emerald-300",
         "bg-gradient-to-b from-slate-50 via-lime-100 to-lime-200",
         "bg-gradient-to-b from-slate-50 via-purple-100 to-purple-300",

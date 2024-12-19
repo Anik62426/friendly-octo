@@ -19,6 +19,7 @@ import Loader from "../components/Loader";
 import ProductCard from "./Products/ProductCard";
 import ShopTitle from "../components/ShopTitle";
 
+
 const Shop = () => {
   const dispatch = useDispatch();
   const { categories, products, checked, radio } = useSelector(
@@ -100,14 +101,14 @@ const Shop = () => {
 
   
   const colors = [
-    "bg-gradient-to-b from-slate-50 to-blue-300",
-    "bg-gradient-to-b from-slate-50 to-emerald-300",
-    "bg-gradient-to-b from-slate-50 to-lime-200",
-    "bg-gradient-to-b from-slate-50 to-purple-300",
-    "bg-gradient-to-b from-slate-50 to-sky-300",
-    "bg-gradient-to-b from-slate-50 to-yellow-300",
-    "bg-gradient-to-b from-slate-50 to-red-400",
-    "bg-gradient-to-b from-slate-50 to-orange-300"
+    "bg-gradient-to-b from-white via-[#F7FCF0] to-[#CBEC98]",
+    "bg-gradient-to-b from-white via-[#DFF3FE] to-[#B2E3FE]",
+    "bg-gradient-to-b from-white via-[#FCF0EB] to-[#EFB191]",
+    "bg-gradient-to-b from-white via-[#F7E6DF] to-[#FF874B]",
+    "bg-gradient-to-b from-white via-[#F8EBE0] to-[#E6BE99]",
+    "bg-gradient-to-b from-white via-[#FFEEFA] to-[#FFC1EE]",
+    "bg-gradient-to-b from-white via-[#F9FBEC] to-[#E6EFB4]",
+    
   ];
  
   // const [currentColors, setCurrentColor] = useState(colors[0]);
@@ -117,7 +118,7 @@ const Shop = () => {
     <>
       <div className=" mx-auto">
         <ShopTitle/>
-            <div className="grid grid-cols-3 gap-y-5 mx-2 bg-gradient-to-b from-slate-50 to-pink-300 rounded-2xl pb-10 pt-10">
+            <div className="grid grid-cols-2 gap-y-5 mx-2 bg-gradient-to-b from-slate-50 to-pink-300 rounded-2xl pb-10 pt-10 lg:grid-cols-3">
               {products.length === 0 ? (
                 <Loader />
               ) : (
@@ -129,6 +130,7 @@ const Shop = () => {
                 ))
               )}
             </div>
+          
       </div>
     </>
   );

@@ -5,9 +5,13 @@ import { CgProfile } from "react-icons/cg";
 import Navigation from './Navigation';
 import { ImCross } from "react-icons/im";
 import { motion } from 'framer-motion';
+import { useSelector, useDispatch } from "react-redux";
+
+
 
 const NavbarComponent = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const { cartItems } = useSelector((state) => state.cart);
 
   const handleScroll = () => {
     const position = window.scrollY || document.documentElement.scrollTop;
@@ -64,6 +68,14 @@ const NavbarComponent = () => {
           <Link to="cart">
             <button className={` rounded-full  bg-black text-white  text-xl font-bold border-2 border-black ${scrollPosition > 50 ? 'px-5 py-0.5 mt-1 mr-1' : ' px-5 py-1.5 mt-[-2px] mr-4 '}`}>
               Cart
+              {cartItems.length > 0 && (
+              <span>
+                <span className="pl-0.5 text-base absolute top-[-2px] text-amber-200 rounded-full">
+                 {cartItems.reduce((a, c) => a + c.qty, 0)}
+                </span>
+              </span>
+            )}
+            
             </button>
           </Link>
         </div>
