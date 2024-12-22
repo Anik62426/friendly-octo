@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useGetFilteredProductsQuery } from "../redux/api/productApiSlice";
 import { useFetchCategoriesQuery } from "../redux/api/categoryApiSlice";
+
 import {
   motion,
   useAnimation,
@@ -18,6 +19,7 @@ import {
 import Loader from "../components/Loader";
 import ProductCard from "./Products/ProductCard";
 import ShopTitle from "../components/ShopTitle";
+import Testimonial from "../components/Testimonial";
 
 
 const Shop = () => {
@@ -27,7 +29,11 @@ const Shop = () => {
   );
 
   const categoriesQuery = useFetchCategoriesQuery();
+  
   const [priceFilter, setPriceFilter] = useState("");
+  const [state, setState] = useState({
+    radio,
+  });
 
   const filteredProductsQuery = useGetFilteredProductsQuery({
     checked,
@@ -116,7 +122,7 @@ const Shop = () => {
 
   return (
     <>
-      <div className=" mx-auto">
+      <div className=" mx-auto w-full">
         <ShopTitle/>
             <div className="grid grid-cols-2 gap-y-5 mx-2 bg-gradient-to-b from-slate-50 to-pink-300 rounded-2xl pb-10 pt-10 lg:grid-cols-3">
               {products.length === 0 ? (
@@ -130,7 +136,8 @@ const Shop = () => {
                 ))
               )}
             </div>
-          
+            
+          <Testimonial/>
       </div>
     </>
   );

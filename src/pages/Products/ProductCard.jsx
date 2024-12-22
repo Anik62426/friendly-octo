@@ -16,6 +16,7 @@ import {
 } from "framer-motion";
 import ProductDetails from "./ProductDetails";
 
+
 const ProductCard = ({ p, currentColor }) => {
   const dispatch = useDispatch();
 
@@ -94,11 +95,11 @@ const ProductCard = ({ p, currentColor }) => {
           </div>
 
           <div className="flex items-center justify-around ml-6 mt-4 ">
-            <h5 className="mb-2 text-2xl font-bold text-black w-44 ">
+            <h5 className="mb-2 text-2xl font-bold text-black w-44 pop">
               {p?.name?.substring(0, 25)}{" "}
             </h5>
             <button
-              className="py-2.5 px-5 ml-2 mr-4  bg-white rounded-full uppercase font-mono font-bold hover:bg-black hover:text-white border-2 hover:py-3.5  border-black"
+              className="py-2.5 px-5 ml-2 mr-4 pop  bg-white rounded-full uppercase font-mono font-bold hover:bg-black hover:text-white border-2 hover:py-3.5  border-black"
               onClick={() => addToCartHandler(p, 1)}
             >
               Add to Cart

@@ -48,79 +48,80 @@ const Profile = () => {
   
 
   return (
-    <div className="container mx-auto p-4 ">
-      <div className="flex justify-center align-center md:flex md:space-x-4">
-        <div className="md:w-1/3">
+    <div className="container mx-auto p-4 mt-28 ">
+      <div className="flex justify-center align-center ">
+        <div className="w-[40%] border border-gray-300 p-10  rounded-sm">
        
          {userInfo.isAdmin && (
           <div className="mb-10">
           <Link
                  to="/admin/dashboard"
                  target="_blank"
-                 className="bg-yellow-400 text-white py-2 px-5 rounded hover:bg-yellow-500 "
+                 className="bg-[#328feb] font-mono text-white py-3 px-5 rounded-lg font-bold tracking-tighter hover:bg-[#45a2ff] "
                >
                  Go To Dashboard
                </Link>
           </div>
          )}
 
-          <h2 className="text-2xl font-semibold mb-4">Update Profile</h2>
+          <h2 className="text-2xl font-semibold mb-4 capri tracking-tighter">Update Profile</h2>
           <form onSubmit={submitHandler}>
-            <div className="mb-4">
-              <label className="block text-white mb-2">Name</label>
+            <div className="mb-4 flex items-center my-5">
+              <label className="block text-black mb-2 capri mr-[3.2rem] mt-2 ">Name:</label>
               <input
                 type="text"
                 placeholder="Enter name"
-                className="form-input p-4 rounded-sm w-full"
+                className="form-input p-2 placeholder-gray-400 border border-gray-700 rounded-sm w-full capri"
                 value={username}
                 onChange={(e) => setUserName(e.target.value)}
               />
             </div>
 
-            <div className="mb-4">
-              <label className="block text-white mb-2">Email Address</label>
+            <div className="mb-4 flex items-center my-5">
+              <label className="block text-black mb-2 capri mr-14 mt-2 ">Email:</label>
               <input
                 type="email"
                 placeholder="Enter email"
-                className="form-input p-4 rounded-sm w-full"
+                className="form-input p-2 placeholder-gray-400 border border-gray-700 rounded-sm w-full capri"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
 
-            <div className="mb-4">
-              <label className="block text-white mb-2">Password</label>
+
+            <div className="mb-4 flex items-center my-5">
+              <label className="block text-black mb-2 capri mr-8 mt-2">Password</label>
               <input
                 type="password"
                 placeholder="Enter password"
-                className="form-input p-4 rounded-sm w-full"
+                className="form-input p-2 placeholder-gray-400 border border-gray-700 rounded-sm w-full capri"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
 
-            <div className="mb-4">
-              <label className="block text-white mb-2">Confirm Password</label>
+            <div className="mb-4 flex items-center my-5">
+              <label className="block text-black mb-2 capri  mt-2">Confirm Password</label>
               <input
                 type="password"
                 placeholder="Confirm password"
-                className="form-input p-4 rounded-sm w-full"
+                className="form-input p-2 placeholder-gray-400 border border-gray-700 rounded-sm w-full capri"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </div>
 
-            <div className="flex justify-between">
+            <div className="flex justify-between my-5">
               <button
                 type="submit"
-                className="bg-pink-500 text-white py-2 px-4 rounded hover:bg-pink-600"
+                className="bg-pink-500 text-white py-2 px-4 rounded hover:bg-pink-600 capri"
               >
                 Update
               </button>
 
               <Link
-                to="/user-orders"
-                className="bg-pink-600 text-white py-2 px-4 rounded hover:bg-pink-700"
+                to="/order"
+                className="bg-pink-600 text-white py-2 px-4 rounded hover:bg-pink-700 capri"
               >
                 My Orders
               </Link>

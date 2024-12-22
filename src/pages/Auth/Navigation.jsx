@@ -9,7 +9,7 @@ import {
 import { FaArrowRightLong } from "react-icons/fa6";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { CiShoppingCart } from "react-icons/ci";
-import { FaRegHeart } from "react-icons/fa";
+
 import { TbUserBolt } from "react-icons/tb";
 import { TbArrowLeft } from "react-icons/tb";
 import { FaHeart } from "react-icons/fa";
@@ -63,7 +63,7 @@ const Navigation = () => {
      transition={{ duration: 0.5, ease: "easeInOut" }}
       style={{ zIndex:50 }}
       className={`
-      flex flex-col w-[300px] justify-between pt-4 pl-7 text-black bg-white shadow-2xl   h-[100vh] fixed `}
+      flex flex-col w-[300px] justify-between pt-4 pl-7 text-black bg-white shadow-2xl   h-[100vh] fixed top-0`}
     >
     
   {/* <NavbarComponent/>       */}
@@ -79,30 +79,31 @@ const Navigation = () => {
 
         <Link
           to="/shop"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="flex items-center mt-[3rem] hover:bg-gray-100 py-3"
         >
-          <MdOutlineShoppingBag className="mr-2" size={32} />
-          <span className="font-semibold text-2xl capitalize transition-transform transform hover:translate-x-3">Shop</span>{" "}
+          <MdOutlineShoppingBag className="mr-2" size={32} style={{ color: "#FB533A", fill: "#FB533A" }} />
+          <span className="font-semibold text-2xl capitalize transition-transform transform hover:translate-x-3 capri">Shop</span>{" "}
         </Link>
 
-        <Link to="/favorite" className="flex relative pl-1 py-3 hover:bg-gray-100">
+        <Link to="/favorite" className="flex relative pl-1 py-3 hover:bg-gray-100" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <div className="flex justify-center items-center ">
-            <FaRegHeart size={26} strokeWidth={2} />
-            <span className=" pl-3 font-semibold text-2xl transition-transform transform hover:translate-x-3">Favorites</span>
+            <FaHeart size={26}  strokeWidth={2}  style={{ color: "#FF3F6C", fill: "#FF3F6C" }}/>
+            <span className=" pl-3 font-semibold text-2xl transition-transform transform hover:translate-x-3 capri">Favorites</span>
             <FavoritesCount />
           </div>
         </Link>
 
-        <Link to="/cart" className="flex relative py-3 hover:bg-gray-100">
+        <Link to="/cart" className="flex relative py-3 hover:bg-gray-100" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <div className="flex items-center capitalize ">
-            <CiShoppingCart strokeWidth={1} className=" mr-2" size={34} />
-            <span className=" font-semibold text-2xl transition-transform transform hover:translate-x-3">Cart</span>{" "}
+            <CiShoppingCart strokeWidth={1} className=" mr-2" size={34} style={{ color: "#23C5A0" }} />
+            <span className=" font-semibold text-2xl transition-transform transform hover:translate-x-3 capri">Cart</span>{" "}
           </div>
 
-          <div className="absolute top-[-2px] left-5">
+          <div className="absolute top-[-1px] left-5">
             {cartItems.length > 0 && (
               <span>
-                <span className="px-1.5  text-sm text-white bg-pink-500 rounded-full">
+                <span className="px-1.5 capri text-xl font-bold text-[#F16565] rounded-full ">
                   {cartItems.reduce((a, c) => a + c.qty, 0)}
                 </span>
               </span>
@@ -111,16 +112,16 @@ const Navigation = () => {
         </Link>
 
         {userInfo && (
-          <Link to="/profile" className="capitalize flex text-2xl py-3 hover:bg-gray-100 font-semibold ">
-            <TbUserBolt size={32} className="mr-2.5"/>
-            <span className="transition-transform transform hover:translate-x-3"> Profile</span> 
+          <Link to="/profile" className="capitalize flex text-2xl py-3 hover:bg-gray-100 font-semibold " onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <TbUserBolt size={32} className="mr-2.5"  style={{ color: "#328FEB", fill: "#328FEB" }}/>
+            <span className="transition-transform transform hover:translate-x-3 capri"> Profile</span> 
           </Link>
         )}
 
         {userInfo && (
-          <button className="flex text-2xl capitalize font-semibold py-3 hover:bg-gray-100 " onClick={logoutHandler}>
-            <TbArrowLeft size={33}  className="mt-0.5 mr-2"/>
-            <span className="transition-transform transform hover:translate-x-3">Logout </span> 
+          <button className="flex text-2xl capitalize font-semibold py-3 hover:bg-gray-100 " onClick={()=>{logoutHandler,window.scrollTo({ top: 0, behavior: 'smooth' })}}>
+            <TbArrowLeft size={33}  className="mt-0.5 mr-2"  style={{ color: "#b88fff"}}/>
+            <span className="transition-transform transform hover:translate-x-3 capri">Logout </span> 
           </button>
         )}
       </div>
@@ -134,11 +135,11 @@ const Navigation = () => {
             <div className="flex items-center mb-5 ">
              
               <div className="relative inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-gray-200 rounded-full ">
-                <span className="font-semibold text-2xl capitalize text-gray-600 ">
+                <span className="font-semibold text-2xl capitalize  text-gray-600 ">
                 {userInfo.username[0]}
                 </span>
               </div>
-              <span className="text-black capitalize font-semibold text-xl pl-2">{userInfo.username}</span>
+              <span className="text-black capitalize font-semibold text-xl pl-2 capri">{userInfo.username}</span>
               
             </div>
           ) : (
@@ -175,6 +176,7 @@ const Navigation = () => {
                 <li>
                   <Link
                     to="/admin/dashboard"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                     className="block px-4 py-2 hover:bg-gray-200 rounded-2xl text-lg font-semibold"
                   >
                     Dashboard
