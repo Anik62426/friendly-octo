@@ -15,7 +15,7 @@ const App = () => {
       
       <main className="pb-3">
         <Outlet />
-        <Testimonial/>
+        {/* <Testimonial/> */}
       </main>
       <Footer/>
     </>

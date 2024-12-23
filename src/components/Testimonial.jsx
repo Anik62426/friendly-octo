@@ -11,7 +11,7 @@ const Testimonial = () => {
       <div className="testimonial-container ">
         <div className="testimonial-items ">
           
-          <div className="testimonial-item bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl  bg-card text-card-foreground shadow-lg  w-full max-w-md mx-auto p-6 pt-6 ">
+          <div className="testimonial-item bg-white border hover:shadow-lg transition-all duration-300 ease-out rounded-xl   bg-card text-card-foreground shadow-lg  w-full max-w-md mx-auto p-6 pt-6 ">
             <div className='flex'>
               <img className='h-12 w-12 mr-4 ml-3 rounded-full' src="https://kzmo3u94e65rcdi94si8.lite.vusercontent.net/placeholder.svg?height=40&width=40" alt="profile" />
               <h3 className="text-2xl mt-[-3px] font-semibold">Sarah Johnson</h3>
@@ -23,7 +23,7 @@ const Testimonial = () => {
           </div>
 
          
-          <div className="testimonial-item rounded-xl bg-gradient-to-br from-purple-100 to-pink-100 bg-card text-card-foreground shadow-lg w-full max-w-md mx-auto p-6 pt-6">
+          <div className="testimonial-item rounded-xl border bg-white hover:shadow-lg transition-all duration-300 ease-out bg-card text-card-foreground shadow-lg w-full max-w-md mx-auto p-6 pt-6">
             <div className='flex'>
               <img className='h-12 w-12 mr-4 ml-3 rounded-full' src="https://kzmo3u94e65rcdi94si8.lite.vusercontent.net/placeholder.svg?height=40&width=40" alt="profile" />
               <h3 className="text-2xl mt-[-3px] font-semibold">John Doe</h3>
@@ -34,7 +34,7 @@ const Testimonial = () => {
             <p className="text-gray-600 capri italic mt-4 ml-2">“The products are great, and the website is very easy to navigate. Highly recommended!”</p>
           </div>
 
-          <div className="testimonial-item bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl  bg-card text-card-foreground shadow-lg  w-full max-w-md mx-auto p-6 pt-6 ">
+          <div className="testimonial-item bg-white border hover:shadow-lg transition-all duration-300 ease-out rounded-xl  bg-card text-card-foreground shadow-lg  w-full max-w-md mx-auto p-6 pt-6 ">
             <div className='flex'>
               <img className='h-12 w-12 mr-4 ml-3 rounded-full' src="https://kzmo3u94e65rcdi94si8.lite.vusercontent.net/placeholder.svg?height=40&width=40" alt="profile" />
               <h3 className="text-2xl mt-[-3px] font-semibold">Sarah Johnson</h3>
@@ -46,7 +46,7 @@ const Testimonial = () => {
           </div>
 
          
-          <div className="testimonial-item rounded-xl bg-gradient-to-br from-purple-100 to-pink-100 bg-card text-card-foreground shadow-lg w-full max-w-md mx-auto p-6 pt-6">
+          <div className="testimonial-item rounded-xl border bg-white hover:shadow-lg transition-all duration-300 ease-out bg-card text-card-foreground shadow-lg w-full max-w-md mx-auto p-6 pt-6">
             <div className='flex'>
               <img className='h-12 w-12 mr-4 ml-3 rounded-full' src="https://kzmo3u94e65rcdi94si8.lite.vusercontent.net/placeholder.svg?height=40&width=40" alt="profile" />
               <h3 className="text-2xl mt-[-3px] font-semibold">John Doe</h3>
@@ -57,7 +57,7 @@ const Testimonial = () => {
             <p className="text-gray-600 capri italic mt-4 ml-2">“The products are great, and the website is very easy to navigate. Highly recommended!”</p>
           </div>
 
-          <div className="testimonial-item bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl  bg-card text-card-foreground shadow-lg  w-full max-w-md mx-auto p-6 pt-6 ">
+          <div className="testimonial-item bg-whit border hover:shadow-lg transition-all duration-300 ease-out rounded-xl  bg-card text-card-foreground shadow-lg  w-full max-w-md mx-auto p-6 pt-6 ">
             <div className='flex'>
               <img className='h-12 w-12 mr-4 ml-3 rounded-full' src="https://kzmo3u94e65rcdi94si8.lite.vusercontent.net/placeholder.svg?height=40&width=40" alt="profile" />
               <h3 className="text-2xl mt-[-3px] font-semibold">Sarah Johnson</h3>
@@ -69,7 +69,7 @@ const Testimonial = () => {
           </div>
 
          
-          <div className="testimonial-item rounded-xl bg-gradient-to-br from-purple-100 to-pink-100 bg-card text-card-foreground shadow-lg w-full max-w-md mx-auto p-6 pt-6">
+          <div className="testimonial-item rounded-xl border bg-white hover:shadow-lg transition-all duration-300 ease-out bg-card text-card-foreground shadow-lg w-full max-w-md mx-auto p-6 pt-6">
             <div className='flex'>
               <img className='h-12 w-12 mr-4 ml-3 rounded-full' src="https://kzmo3u94e65rcdi94si8.lite.vusercontent.net/placeholder.svg?height=40&width=40" alt="profile" />
               <h3 className="text-2xl mt-[-3px] font-semibold">John Doe</h3>
