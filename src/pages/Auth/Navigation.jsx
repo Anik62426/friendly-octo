@@ -119,8 +119,9 @@ const Navigation = () => {
         )}
 
         {userInfo && (
-          <button className="flex text-2xl capitalize font-semibold py-3 hover:bg-gray-100 " onClick={()=>{logoutHandler,window.scrollTo({ top: 0, behavior: 'smooth' })}}>
+          <button className="flex text-2xl capitalize font-semibold py-3 hover:bg-gray-100 " onClick={()=>{logoutHandler(),window.scrollTo({ top: 0, behavior: 'smooth' })}}>
             <TbArrowLeft size={33}  className="mt-0.5 mr-2"  style={{ color: "#b88fff"}}/>
+            
             <span className="transition-transform transform hover:translate-x-3 capri">Logout </span> 
           </button>
         )}
